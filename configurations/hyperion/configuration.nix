@@ -4,6 +4,14 @@
   imports = with self; [
     nixosModules.systemModules
   ];
+
+  # Hostanme  
+  networking.hostName = "hyperion";
+  
+  # Version
+  system.stateVersion = "23.11";
+  
+  # Users
   users.users.martin = {
     isNormalUser = true;
     extraGroups = [
@@ -11,8 +19,8 @@
       "networkmanager"
     ];
   };
-  networking.hostName = "hyperion";
-  system.stateVersion = "23.11";
+  
+  # Modules config
   systemModules = {
     basics = {
       home-manager.enable = true;
@@ -29,12 +37,21 @@
       disko.enable = true;
     };
   };
+  
+  # Desktop
+  programs.hyprland.enable = true;
+
+  # home-manager config
   home-manager.users.martin = { osConfig, ... }:
   {
     imports = with self; [
       nixosModules.homeModules
     ];
+
+    # Version
     home.stateVersion = osConfig.system.stateVersion;
+    
+    # Modules config
     homeModules = {
       basics = {
         home-manager.enable = true;
