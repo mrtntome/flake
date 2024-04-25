@@ -7,5 +7,5 @@ mkConfig = path:
   };
 in 
 {
-  hyperion = mkConfig ./hyperion/configuration.nix
+  hyperion = mkConfig ./hyperion/configuration.nix;
 }
