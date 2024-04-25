@@ -8,4 +8,5 @@ mkConfig = path:
 in 
 {
   hyperion = mkConfig ./hyperion/configuration.nix;
+  kronos = mkConfig ./kronos/configuration.nix;
 }
