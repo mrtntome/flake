@@ -1,10 +1,11 @@
 inputs@{ self, ... }:
-
-{
-  hyperion = inputs.nixpkgs.lib.nixosSystem {
+let 
+mkConfig = path:
+  inputs.nixpkgs.lib.nixosSystem {
     specialArgs = inputs;
-    modules = [
-      ./hyperion/configuration.nix
-    ];
+    modules = [ path ];
   };
+in 
+{
+  hyperion = mkConfig ./hyperion/configuration.nix
 }
