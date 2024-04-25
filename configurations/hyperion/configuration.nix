@@ -45,6 +45,7 @@
       };
       programs = {
         neovim.enable = true;
+        chromium.enable = true;
       };
     };
   };
