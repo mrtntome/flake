@@ -19,7 +19,7 @@ in
         name = "${id}.crx";
         sha256 = extension.sha256;
       };
-      extension = extension.version;
+      version = extension.version;
     };
     ublock-origin = {
       id = "cjpalhdlnbpafiamejdnhcphjbkeiagm";
