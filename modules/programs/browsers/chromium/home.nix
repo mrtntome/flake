@@ -10,8 +10,7 @@ in
 
   config =  
   let
-    browserVersion = (lib.versions.major pkgs.ungoogled-chromium.version);
-    createChromiumExtension = extension:
+    createChromiumExtensionFor = browserVersion: extension:
     {
       id = extension.id;
       crxPath = builtins.fetchurl {
@@ -21,6 +20,7 @@ in
       };
       version = extension.version;
     };
+    createChromiumExtension = createChromiumExtensionFor (lib.versions.major package.version);
     ublock-origin = {
       id = "cjpalhdlnbpafiamejdnhcphjbkeiagm";
       sha256 = "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
