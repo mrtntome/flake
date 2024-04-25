@@ -40,7 +40,7 @@ in
     mkIf cfg.enable {
       programs.chromium = {
         enable = true;
-        package = pkgs.ungoogled-chromium.version;
+        package = pkgs.ungoogled-chromium;
         extensions = [
           (createChromiumExtension ublock-origin)
           (createChromiumExtension privacy-badger)
