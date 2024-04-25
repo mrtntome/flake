@@ -8,7 +8,6 @@
       ./basics/nix-flakes
       ./basics/nix-index
       ./basics/security
-#      ./desktops/hyprland
       ./greeters/tuigreet
       ./greeters/regreet
       ./hardware/cubic-desktop
@@ -24,6 +23,7 @@
       ./basics/xdg/home.nix
       ./desktops/hyprland/home.nix
       ./programs/neovim/home.nix
+      ./programs/browsers/chromium/home.nix
       self.inputs.nixvim.homeManagerModules.nixvim
     ];
   };
